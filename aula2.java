@@ -2,34 +2,46 @@ package com.mycompany.aula;
 
 import java.util.Scanner;
 
-public class Aula_2 {
+public class Aula {
 
     public static void main(String[] args) {
 
         Scanner teclado = new Scanner(System.in);
 
-        //Valores inteiros
-        int vr = 10;
-        int ch = 0;
-        int qtdtentativas = 0;
+        float peso = 0;
+        float maior = 0;
+        float menor = 99999;
+        int soma = 0;
+        int i = 0;
+        int qtd = 0;
 
-        //Loop de tentativas
-        while ((vr != ch) && (qtdtentativas < 10)) {
+        System.out.println("Quantos bois voce deseja: ");
+        qtd = teclado.nextInt();
 
-            System.out.println("Tenta outra vez: ");
-            ch = teclado.nextInt();
+        for (i = 0; i < qtd; i++) {
 
-            qtdtentativas = qtdtentativas + 1;
+            System.out.println("Me diga o peso dos bois: ");
+            peso = teclado.nextFloat();
+            soma += peso;
+            
+            if (peso > maior) {
+                maior = peso;
 
-            if ((qtdtentativas >= 2) && (qtdtentativas <= 4));
-            {
-                System.out.println("Dica, chute um numero de 1 a 1000.");
-            }
-            if (ch == vr) {
-                System.out.println("Parabens, voce acertou");
+            } 
+            
+            if (peso < menor) {
+                menor = peso;
+
             }
 
         }
+        float media = 0;
+
+        media = soma / qtd;
+
+        System.out.println("Media de peso dos bois: " + media);
+        System.out.println("O menor boi pesa: " + menor);
+        System.out.println("O maior boi pesa: " + maior);
 
     }
 }
