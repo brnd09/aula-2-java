@@ -1,8 +1,8 @@
-package com.mycompany.aula;
+package org.example;
 
 import java.util.Scanner;
 
-public class Aula {
+public class Main {
 
     public static void main(String[] args) {
 
@@ -11,9 +11,11 @@ public class Aula {
         float peso = 0;
         float maior = 0;
         float menor = 99999;
-        int soma = 0;
+        float soma = 0;
         int i = 0;
         int qtd = 0;
+
+
 
         System.out.println("Quantos bois voce deseja: ");
         qtd = teclado.nextInt();
@@ -23,12 +25,12 @@ public class Aula {
             System.out.println("Me diga o peso dos bois: ");
             peso = teclado.nextFloat();
             soma += peso;
-            
+
             if (peso > maior) {
                 maior = peso;
 
-            } 
-            
+            }
+
             if (peso < menor) {
                 menor = peso;
 
@@ -39,9 +41,11 @@ public class Aula {
 
         media = soma / qtd;
 
-        System.out.println("Media de peso dos bois: " + media);
-        System.out.println("O menor boi pesa: " + menor);
-        System.out.println("O maior boi pesa: " + maior);
+        String medi2 = String.format("%.2f", media);
+
+        System.out.println(STR."Media de peso dos bois : \{medi2}");
+        System.out.println(STR."O menor boi pesa: \{menor}");
+        System.out.println(STR."O maior boi pesa: \{maior}");
 
     }
 }
